@@ -38,12 +38,8 @@ function render(variables = {}) {
           <h2>${variables.role || "role"}</h2>
           <h3>${variables.city || "city"} ${variables.country || "country"}</h3>
           <ul class=${variables.socialMediaPosition}>
-            <li><a href="https://twitter.com/4geeksacademy ${
-              variables.twitter
-            }"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy ${
-              variables.github
-            }"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/4geeksacademy ${variables.twitter === null ? "twitter.com" : variables.twitter}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${variables.github ? variables.twitter : 'github.com'}"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/school/4geeksacademy ${
               variables.linkedin
             }"><i class="fab fa-linkedin"></i></a></li>
